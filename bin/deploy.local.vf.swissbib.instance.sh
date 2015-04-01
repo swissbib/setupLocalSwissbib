@@ -24,9 +24,9 @@ CLASSMAP_GENERATOR=${APP_DIR}/vendor/zendframework/zendframework/bin/classmap_ge
 CSS_BUILDER=${APP_DIR}/util/cssBuilder.php
 
 #initialize this variable if you want to create the local vufind DB
-SETCREATEDATABASE=true
-#set the root password if you want to create a new database
-rootPW=listefoo1
+#SETCREATEDATABASE=true
+#set the root password for mysql DB if you want to create a new database
+rootPW=
 
 #initialize this variable if you want to create a DB user and grant privileges
 #CREATEANDGRANTDBUSER=true
@@ -60,12 +60,10 @@ End-of-message
 function createDB {
 
     echo "creating local DB for VuFind"
+    mysql --user=root -p${rootPW} < ${SCRIPTDIRECTORY}/swissbib_vufind.sql
     if [ ! -z ${CREATEANDGRANTDBUSER} ]; then
         mysql --user=root -p${rootPW} < ${SCRIPTDIRECTORY}/createAndGrantUser.sql
     fi
-
-    mysql --user=root -p${rootPW} < ${SCRIPTDIRECTORY}/swissbib_vufind.sql
-
 
 }
 
