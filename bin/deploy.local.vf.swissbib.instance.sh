@@ -47,7 +47,7 @@ cd /etc/apache2/conf-enabled:
 ln -s /usr/local/vufind/httpd/local/httpd-swissbib.conf httpd-swissbib.conf
 2) restart apache (with root): service apache2 restart
 3) now you should be able to call Swissbib/Vufind in your browser:
-httpd://localhost/sbrd
+http://localhost/sbrd
 
 Good Luck!
 
