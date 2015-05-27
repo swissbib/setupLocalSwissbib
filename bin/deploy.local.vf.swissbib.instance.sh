@@ -83,7 +83,7 @@ fi
 
 mkdir -p ${DEPLOY_PREPARE}
 cd ${DEPLOY_PREPARE}
-git clone https://github.com/swissbib/vufind.git .
+git clone https://github.com/linked-swissbib/vufind.git .
 
 # Bereite Deploy-Verzeichnis vor
 # ------------
@@ -95,7 +95,7 @@ mkdir -p ${DEPLOY}
 
 
 #chose the latest current tag
-git archive --format=tar --o=${DEPLOY}/deploycode.tar 26-beta-3
+git archive --format=tar --o=${DEPLOY}/deploycode.tar bcba27a10c5d171170c3d6ee1b99b95ea36de6b3
 
 cd ${DEPLOY}
 tar xf deploycode.tar
